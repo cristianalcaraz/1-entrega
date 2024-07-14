@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "id": "cart1",
+      "products": [
+        {
+          "id": "uuid1",
+          "quantity": 2
+        },
+        {
+          "id": "uuid3",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "cart2",
+      "products": [
+        {
+          "id": "uuid2",
+          "quantity": 3
+        },
+        {
+          "id": "uuid4",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "3d617136-c433-4b91-981f-8526b8081dfa",
+      "products": []
+    }
+  ]
+}

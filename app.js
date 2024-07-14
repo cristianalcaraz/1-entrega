@@ -1,31 +1,14 @@
 import express from 'express';
-import ProductManager from './class/productManager.js';
-import { __dirname } from './utils.js';
-
-
+import productsRouter from './src/routes/products.router.js';
+import cartsRouter from './src/routes/carts.router.js';
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const productManager = new ProductManager(__dirname + '/data/product.json');
-
-app.post('/', async (req, res) => {
-    // console.log('Entro en el post!')
-    
-    const newProduct = req.body 
-    // agregar validaciones en caso de que un producto no tenga todos los campos
-    await productManager.addProduct(newProduct);
-    // console.log('ya se creo el archivo product.json ')
-    res.status(201).json({ message: 'Añadido!' })
-})
-
-app.get('/', async (req, res) => {
-    const productList = await productManager.getProductList();
-    
-    res.status(201).json({ resultado: productList })
-})
+app.use('/api/products', productsRouter);
+app.use('/api/carts', cartsRouter);
 
 app.listen(8080, () => {
-    console.log("servidor ON")
-})
+    console.log("Servidor ON en el puerto 8080");
+});
